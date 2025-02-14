@@ -1,4 +1,3 @@
-
 let quotes = []; 
 // DOM references
 const elements = {
@@ -80,3 +79,39 @@ observer.observe(document.querySelector('.card'));
 // Add accessibility attributes
 document.querySelector('.card-content').setAttribute('aria-live', 'polite');
 document.querySelector('.card-content').setAttribute('aria-busy', 'false');
+// Theme toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const themeIcon = themeToggle.querySelector('.theme-icon');
+const sunPath = themeIcon.querySelector('.sun');
+const moonPath = themeIcon.querySelector('.moon');
+const currentTheme = localStorage.getItem('theme') || 'light-mode';
+
+if (currentTheme === 'dark-mode') {
+  body.classList.add('dark-mode');
+  sunPath.style.display = 'none';
+  moonPath.style.display = 'block';
+} else {
+  body.classList.add('light-mode');
+  sunPath.style.display = 'block';
+  moonPath.style.display = 'none';
+}
+
+themeToggle.addEventListener('click', () => {
+  themeToggle.classList.add('rotate', 'animated');
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark-mode');
+    sunPath.style.display = 'none';
+    moonPath.style.display = 'block';
+  } else {
+    localStorage.setItem('theme', 'light-mode');
+    sunPath.style.display = 'block';
+    moonPath.style.display = 'none';
+  }
+
+  setTimeout(() => {
+    themeToggle.classList.remove('rotate', 'animated');
+  }, 500);
+});
