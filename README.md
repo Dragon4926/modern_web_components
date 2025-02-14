@@ -31,7 +31,9 @@ git clone https://github.com/yourusername/modern-web-components.git
 | Component       | Description                          | Demo                          | Code                          |
 |-----------------|--------------------------------------|------------------------------------|-------------------------------|
 | Expanding Cards | Interactive card expansion interface | [Screenshot](./base/expandingCards/im1.png)      | [Code](./base/expandingCards) |
-
+| Card Placeholder | Modern Card (Dual theme) | [Screenshot[Light]](./base/cardPlaceholder/im1.png)       | [Code](./base/cardPlaceholder) |
+|  |  | [Screenshot[dark]](./base/cardPlaceholder/im2.png)       |  |
+||
 
 ## 🤝 Contributing
 
